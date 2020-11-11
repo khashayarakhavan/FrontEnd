@@ -22,8 +22,11 @@ import {AnimationCreateRobot} from '../../../design/animations.styles';
 import { Accent_fireOrange , Accent_mateBlue } from '../../../design/effects.styles';
 import {
   Button,
+  SkillTotal,
+  Front,
+  Behind,
   TEXT,
-  H1,
+  Heading,
   HeroHeaderContainer,
   HeroHeaderLeft,
   HeroHeaderRight,
@@ -32,80 +35,6 @@ import {
   Skill_2,
   Skill_3,
 } from "./heroHeader.styles";
-
-
-
-const HeroHeaderComponent = (props) => {
-  const { width , height} = useViewport();
-  const mobileBreak = 500;
-  const tabletBreak = 1000;
-  const desktopBreak = 1300;
-  console.log('this is width: ',width);
-  console.log('this is height: ',height);
-
-
-  return (
-    <HeroHeaderContainer id="header">
-      <HeroHeaderLeft>
-        <H1>
-          <p>
-            Hi<Accent_fireOrange>.</Accent_fireOrange>
-          </p>
-          <p>
-            I<Accent_mateBlue>’</Accent_mateBlue>m
-            <Accent_fireOrange>&nbsp;K</Accent_fireOrange>hashi
-          </p>
-        </H1>
-        <TEXT>
-          a full stack web developer and I love &nbsp;
-          <Skill_1>coding</Skill_1>, &nbsp;
-          <Skill_2>science</Skill_2> &&nbsp;
-          <Skill_3>French</Skill_3>
-          &nbsp;language!
-        </TEXT>
-        <Button>
-          Pleased to meet you 😊 <br />
-          <span>tea or coffee ? </span>
-        </Button>
-      </HeroHeaderLeft>
-      <HeroHeaderRight>
-        {width < mobileBreak ? (
-          <HeroHeaderLottie
-            options={AnimationCreateRobot}
-            resizeMode="cover"
-            width={50}
-            height={50}
-          />
-        ) : (
-          <HeroHeaderLottie
-            options={AnimationCreateRobot}
-            resizeMode="cover"
-            width={400}
-            height={400}
-          />
-        )}
-      </HeroHeaderRight>
-    </HeroHeaderContainer>
-  );}
-
-const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser,
-  hidden: selectCartHidden,
-  darkMode: selectDarkMode,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  signOutStart: () => dispatch(signOutStart()),
-  toggleDarkMode: () => dispatch(toggleDarkMode()),
-  toggleCartHidden: () => dispatch(toggleCartHidden()),
-});
-
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(HeroHeaderComponent);
-export default connect(mapStateToProps, mapDispatchToProps)(HeroHeaderComponent);
-
 
 
 export const HeroHeaderLeftContainer = (props) => {
@@ -117,29 +46,29 @@ export const HeroHeaderLeftContainer = (props) => {
   console.log("this is height: ", height);
 
   return (
-      <HeroHeaderLeft>
-        <H1>
-          <p>
-            Hi<Accent_fireOrange>.</Accent_fireOrange>
-          </p>
-          <p>
+    <HeroHeaderLeft>
+      <Heading>
+        <p>
+          Hi<Accent_fireOrange>.</Accent_fireOrange>
+        </p>
+        <p>    
             I<Accent_mateBlue>’</Accent_mateBlue>m
             <Accent_fireOrange>&nbsp;K</Accent_fireOrange>hashi
-          </p>
-        </H1>
-        <TEXT>
+        </p>
+      </Heading>
+      <TEXT>
           a full stack web developer and I love &nbsp;
-          <Skill_1>coding</Skill_1>, &nbsp;
-          <Skill_2>science</Skill_2> &&nbsp;
-          <Skill_3>French</Skill_3>
-          &nbsp;language!
-        </TEXT>
-        <Button>
-          Pleased to meet you 😊 <br />
-          <span>tea or coffee ? </span>
-        </Button>
-      </HeroHeaderLeft>
-    
+          <SkillTotal>
+            <Skill_1>coding</Skill_1>, &nbsp;
+            <Skill_2>science</Skill_2> &&nbsp;
+            <Skill_3>nature</Skill_3>
+          </SkillTotal>
+      </TEXT>
+      <Button>
+        Pleased to meet you 😊 <br />
+        <span>tea or coffee ? </span>
+      </Button>
+    </HeroHeaderLeft>
   );
 };
 
@@ -156,6 +85,7 @@ export const HeroHeaderRightContainer = (props) => {
           width= {370}
           height={370}
         />;
+
   if ( width <= 450 && width > 400) {
     robotAnimation = (
       <HeroHeaderLottie
@@ -164,8 +94,7 @@ export const HeroHeaderRightContainer = (props) => {
         height={340}
       />
     );
-  }
-    else if ( width <= 400 && width > 350) {
+  } else if ( width <= 400 && width > 350) {
       robotAnimation = <HeroHeaderLottie
           options={AnimationCreateRobot}
           resizeMode="cover"
@@ -184,24 +113,16 @@ export const HeroHeaderRightContainer = (props) => {
           resizeMode="cover"
           height={220}
         />;
-    } 
+    } else if (width >= 1024) {
+      robotAnimation = <HeroHeaderLottie
+        options={AnimationCreateRobot}
+        resizeMode="cover"
+        height={`80%`}
+        
+        
+      />;
+    }
 
   return <HeroHeaderRight>{robotAnimation}</HeroHeaderRight>;
 };
 
-
-        // width < mobileBreak ? (
-        // <HeroHeaderLottie
-        //   options={AnimationCreateRobot}
-        //   resizeMode="cover"
-        //   width={300}
-        //   height={300}
-        // />
-      // ) :  (
-      //   <HeroHeaderLottie
-      //     options={AnimationCreateRobot}
-      //     resizeMode="cover"
-      //     width={400}
-      //     height={400}
-      //   />
-      // )

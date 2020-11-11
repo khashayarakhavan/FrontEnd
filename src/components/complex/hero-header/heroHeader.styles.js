@@ -10,7 +10,6 @@ import {respond} from '../../../design/responsive';
 import shadows from '../../../design/shadows.styles';
 import events from '../../../design/events.styles';
 import {background_change} from '../../../design/motions.styles';
-
 import Lottie from "react-lottie";
 //Assets
 import {AnimationCreateRobot} from '../../../design/animations.styles';
@@ -18,60 +17,74 @@ import {AnimationCreateRobot} from '../../../design/animations.styles';
 
 
 //Code
-export const HeroHeaderContainer = styled.header`
-  grid-column: center-start / center-end;
-  height: 90vh;  
-  justify-items: start;
-  display: grid;
-  grid-template-columns: repeat(2, [col-start] 1fr [col-end]);
+export const Heading = styled.div`
+  ${fonts.mixins.heroHeader}
+  font-size: clamp(30px, 10vw, 60px);
+  line-height: clamp(4rem, 6vw, 7rem);
+  line-height: 6rem;
+  width: 100%;
+  color: ${colors.primary};
+  display: block;
+  position: relative;
+  ${respond.mobile.large`
+    font-size: clamp(51px, 8vw, 80px);
+  `}
+  ${respond.pc.min`
+    font-size: clamp(40px, 4vw, 100px);
+  `}
 `;
 
+
 export const HeroHeaderLeft = styled.div`
-  padding-top: 5vh;
-  grid-column: center-start / center-end;
-  grid-row: 2 / 3;
+  position: relative;
   height: 50vh;
   max-width: 100%;
-  ${'' /* background-color: red; */}
-  ${'' /* display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr; */}
-
-
-  ${'' /* & > * {
-    justify-self: flex-start;
-    align-self: center;
-  } */}
+  padding-top: 15vh;
+  padding-left: 2rem;
+  ${"" /* overflow: hidden !important; */}
+  z-index: 100;
+  background: blue;
+  grid-column: center-start / center-end;
+  grid-row: 2 / 3;
 
   ${respond.mobile.large`
     grid-row: 3 / 4;
   `}
   ${respond.pc.min`
     grid-column: center-start / col-end 4;
-    height: 70vh;
     grid-row: 2 / 3;
+    height: 70vh;
+
   `}
 `;
+
+
+
+
+
+
+
+
+
 export const HeroHeaderRight = styled.div`
   grid-column: center-start / center-end;
   grid-row: 1 / 2;
-  height: 50vh;
-  
-  padding-top: 5vh;
-  ${"" /* padding-top: 20vh; */}
+  height: min-content;
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  ${'' /* background: blue; */}
+  overflow: hidden !important;
+  background: red;
 
   & > * {
     justify-self: flex-start;
-    align-self: flex-start;
+    align-self: center;
+    overflow: visible !important ;
   }
-  ${respond.mobile.medium`
-    ${"" /* height: 50vh; */}
-    
-  `}
+  svg {
+    overflow: visible !important;
+  }
 
   ${respond.mobile.large`
     height: min-content;
@@ -82,10 +95,10 @@ export const HeroHeaderRight = styled.div`
     grid-row: 2 / 3;
     grid-column: col-start 5 / center-end;
     height: 70vh;
-    padding-top: 0vh;
-    
+    padding-top: 0vh;   
   `}
 `;
+
 export const HeroHeaderLottie = styled(Lottie)`
   background-color: lightgreen;
 `;
@@ -93,59 +106,24 @@ export const HeroHeaderLottie = styled(Lottie)`
 export const TEXT = styled.span`
   ${fonts.mixins.text};
   color: ${colors.primary};
+  max-width: 95%;
   margin-left: ${sizes.margin.smaller};
-  ${'' /* margin-top: ${sizes.margin.largest} ; */}
-  ${'' /* margin-top: 6vw; */}
-  ${'' /* margin-bottom: ${sizes.margin.large}; */}
   line-height: ${sizes.lineHeight.large} ;
   display:block;
 `;
-
-export const H1 = styled.span`
-  ${fonts.mixins.heroHeader};
-  font-size: 4vmax;
-  ${'' /* font-size: 20vmin; */}
-  width: 100%;
-  color: ${colors.primary};
-  display: block;
-  line-height: 4vmax;
-  ${respond.mobile.small`
-  font-size: 5vmax;
-  line-height: 5vmax;
-  `}
-  ${respond.pc.min`
-  font-size: 4vmax;
-  line-height: 4vmax;
-  `}
-  ${respond.pc.large`
-  font-size: 3vmax;
-  line-height: 3vmax;
-  `}
-  ${'' /* line-height: 20vmin; */}
-  ${'' /* font-size-adjust: 0.9;  */}
-  ${'' /* line-height: ${sizes.lineHeight.extraLarge}; */}
-  ${'' /* margin-bottom: ${sizes.margin.large};
-  margin-block-end: ${sizes.margin.large}; */}
-  ${'' /* margin-bottom: 3vw; */}
-
-  ${'' /* @media (max-width: 500px) {
-    font-size: 4.25rem;
-  };
-  @media (max-width: 400px) {
-    font-size: 3.75rem;
-  };
-  @media (max-width: 350px) {
-    font-size: 3.25rem;
-  };
-  @media (max-width: 300px) {
-    font-size: 2.75rem;
-  };
-  @media (max-width: 250px) {
-    font-size: 2.25rem;
-  };
-  @media (max-width: 200px) {
-    font-size: 1.75rem;
-  }; */}
+export const Behind = styled.span`
+  z-index: 5 !important;
+  position: relative;
+  ${"" /* position: fixed; */}
+  ${"" /* z-index: 100 !important; */}
+  ${"" /* color: pink; */}
+`;
+export const Front = styled.span`
+  z-index: 15 !important;
+  position: relative;
+  ${"" /* position: fixed; */}
+  ${"" /* z-index: 100 !important; */}
+  ${"" /* color: pink; */}
 `;
 
 export const Skill_1 = styled.span`
@@ -182,6 +160,13 @@ export const Skill_3 = styled.span`
     background-color: ${colors.paleBlue};
   }
 `;
+export const SkillTotal = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+`;
 
 export const Button = styled.div`
   align-self: flex-start;
@@ -191,8 +176,6 @@ export const Button = styled.div`
   &:visited {
     ${fonts.mixins.CTA.visitProfile}};
     display: block;
-    ${'' /* line-height: 2.5rem !important; */}
-    ${'' /* margin-top: 2rem !important; */}
     margin-bottom: 10rem !important;
     margin-right: 2rem !important;
     margin-block-end: 2rem !important;
@@ -228,4 +211,16 @@ export const Button = styled.div`
     box-shadow:  4px 4px 15px 2px rgba(125, 126, 127, 0.42),
            -3px -3px 12px 2px rgba(255, 255, 255, 0.93);
   }
+`;
+
+
+
+
+
+export const HeroHeaderContainer = styled.header`
+  grid-column: center-start / center-end;
+  height: 90vh;
+  justify-items: start;
+  display: grid;
+  grid-template-columns: repeat(2, [col-start] 1fr [col-end]);
 `;
