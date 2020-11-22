@@ -21,6 +21,7 @@
     "react-dom": "^16.8.6",
     "react-fade-in": "^1.1.0",
     "react-lottie": "^1.2.3",
+    "react-native": "^0.63.3",
     "react-redux": "7.0.3",
     "react-router-dom": "5.0.0",
     "react-stripe-checkout": "2.6.3",
@@ -55,6 +56,7 @@
     "css:prefix": "postcss  src/css/compiled/style.compiled.css --use autoprefixer -o src/css/compiled/style.prefix.css",
     "css:compress": "node-sass src/css/compiled/style.prefix.css src/css/compiled/style.compress.css --output-style compressed",
     "css:build": "npm-run-all css:compile css:prefix css:compress",
+    "svgr": "svgr -d src/assets/svgReact/ src/assets/SVG/",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build "
   },
   "eslintConfig": {
