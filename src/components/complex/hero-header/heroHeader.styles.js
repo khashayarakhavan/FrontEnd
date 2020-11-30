@@ -122,8 +122,9 @@ export const Heading = styled.div`
   font-size: clamp(2.5rem, 8.3vw, 8.3vw);
   font-size: clamp(4.7rem, 15.666666vw, 15.666666vw);
   font-size: 12.3333333vw;
-  font-size: 12.2360833vw;
   font-size: 15.2360833vw;
+  font-size: 12.2360833vw;
+  
   line-height: clamp(3rem, 10vw, 10vw);
   line-height: 1;
   letter-spacing: 0px;
@@ -172,11 +173,16 @@ export const TEXT = styled.span`
   font-size: clamp(10px, 3.333vw, 3.333vw);
   font-size: 5.9vw;
   font-size: 9.1vw;
-  margin-top: 20px;
+  font-size: 8vw;
+  font-size: 7.23vw;
+  font-weight: 400;
+  font-weight: 200;
+  ${"" /* margin-top: 20px; */}
   padding-left: clamp(34px, 10.666vw, 10.666vw);
 
   ${respond.mobile.max`
     padding-left: clamp(3px, 0.5vw, 0.5vw);
+    font-size: 7.26vw;
   `}
   ${respond.pc.min`
     padding-left: clamp(3px, 0.5vw, 0.5vw);
@@ -188,7 +194,7 @@ export const TEXT = styled.span`
   `}
 
   .love {
-    margin-top: 3rem; 
+    margin-top: 3rem;
   }
 `;
 
@@ -392,8 +398,9 @@ export const Button = styled.div`
   transform: scale(1.2);
   justify-self: flex-start;
   align-self: flex-start;
-  margin-top: 60px;
   margin-top: clamp(60px, 20vw, 20vw);
+  margin-top: 20px;
+  margin-top: 6.666666vw;
   margin-bottom: clamp(10px, 3.33333vw, 3.33333vw);
   margin-bottom: clamp(30px, 3.33333vw, 3.33333vw);
   ${"" /* margin-left: clamp(32px, 10.666vw, 10.666vw);

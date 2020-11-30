@@ -3,21 +3,33 @@ import styled from "styled-components";
 //Design
 import fonts from '../../../design/fonts.styles';
 import colors from '../../../design/colors';
+import {respond} from '../../../design/responsive';
 
 
 //Code
 export const HeadingContainer = styled.div`
   grid-column: center-start / center-end;
   align-self: center;
-  justify-self: center;
-  width: 100%;
+  width: 60%;
+  width: 70%;
   position: relative;
-  margin-top: 5rem;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  ${"" /* margin: 10rem 2rem; */}
-  ${"" /* padding-bottom: 56.25%; //16 x 9 */}
-  ${'' /* padding-left: clamp(34px, 10.666vw, 10.666vw); */}
+  margin-top: 10rem;
+  margin-bottom: 2rem;
+  margin-bottom: 6.666666vw;
+  padding-left: clamp(30px, 10vw, 10vw);
+
+  ${respond.pc.min` 
+    justify-self: center;
+    grid-column: full-start / full-end;
+    padding-left: 0; 
+    margin-bottom: clamp(2rem, 1.953125vw, 1.953125vw);
+    margin-top: 1.953125vw;
+  `}
+  ${respond.mobile.max` 
+  
+  ${'' /* grid-column: full-start / full-end; */}
+    padding-left: 0; 
+  `}
 
   h1 {
     ${fonts.mixins.heroHeader}
@@ -28,18 +40,33 @@ export const HeadingContainer = styled.div`
     text-rendering: optimizeLegibility;
     font-style: normal;
     color: ${colors.secondary.darkest};
+
+    ${respond.pc.min`
+    font-size: clamp(3.9rem, 3.80859375vw, 3.80859375vw);
+    overflow-wrap: normal;
+    word-break: break-word;
+    line-height: 1;  
+    text-align: center;
+    `}
   }
 
   h4 {
     ${fonts.mixins.text};
+
     color: ${colors.neutrals.darkest};
     letter-spacing: 0px;
     font-style: normal;
+
     text-rendering: optimizeLegibility;
-    ${"" /* line-height: ${sizes.lineHeight.large}; */}
     line-height: clamp(30px, 10vw, 10vw);
     font-family: "Poppins", sans-serif;
     font-weight: 200;
     font-size: 9.1vw;
+
+    ${respond.pc.min`
+    font-size: 2vw;
+    text-align: center;
+    line-height: clamp(30px, 2.9296vw, 2.9296vw);  
+  `}
   }
 `;

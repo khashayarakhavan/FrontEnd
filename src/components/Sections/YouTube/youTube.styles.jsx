@@ -38,36 +38,38 @@ export const YouTubeContainer = styled.div`
   justify-self: center;
   width: 100%;
   width: 90%;
-  ${'' /* width: 80%; */}
-  ${'' /* height: 50rem; */}
   position: relative;
-  margin: 5rem 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
   padding-bottom: 56.25%; //16 x 9
-  padding-bottom: 50.25%; //16 x 9
+  
   border-radius: 40px;
   overflow: hidden;
-  ${'' /* overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center; */}
-  ${'' /* background: red; */}
   ${shadows.mixins.neumorphic.extra};
 
+  display: flex;
+  
+  justify-content: center;
+  
+  
   ${respond.pc.min`
   grid-column: center-start / center-end;
-  grid-row: 4 / span 1;
+  ${'' /* grid-row: 4 / span 1; */}
   margin: 15rem 0.5rem;
   `}
 
   .player {
     position: absolute;
-    top: 0;
+  
+    width: 110%;
+    width: 100%;
+    ${'' /* padding: 1rem; */}
+    ${"" /* width: 105%;
+    top:0;
+    left:0; */}
+    ${"" /* width: 88.88888%; */}
     
-    width: 100%;
-    width: 100%;
-    ${'' /* width: 88.88888%; */}
     height: 100%;
-    ${'' /* height: 50%; */}
+    ${"" /* height: 50%; */}
   }
 `;

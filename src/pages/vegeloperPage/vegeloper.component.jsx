@@ -34,6 +34,8 @@ const LandingPage = () => (
     <HeroHeaderLeftContainer />
     <HeroHeaderRightContainer />
     <ScrollDownCTA />
+    <Heading/>
+    <YouTube />
     <ScrollHorizontal/>
     <MiniCards />
   </VegeloperContainer>
