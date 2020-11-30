@@ -11,49 +11,114 @@ import Skills from "../../components/Sections/skills/skills.component";
 import SectionStoriesPicture from "../../components/complex/section/stories-picture/stories-picture.component";
 import { LandingPageContainer } from "./vegeloper.styles";
 import Header from '../../components/Sections/header/header.component';
+import Heading from '../../components/Sections/Heading/heading.component';
+import ScrollHorizontal from '../../components/Sections/ScrollHorizontal/scrollHorizontal.component';
 import {
   HeroHeaderLeftContainer,
   HeroHeaderRightContainer,
 } from "../../components/complex/hero-header/heroHeader.component";
-import SideBar from '../../components/Sections/SideBar/SideBar.component';
-// import { HeroLeftSide, HeroRightSide } from "./vegeloper.styles";
+
+//Section
+import {YouTube} from '../../components/Sections/YouTube/youTube.component';
+
 //Design
 import {
   VegeloperContainer,
-  LeftSide,
-  RightSide,
-  ScrollContainerFlex,
-  ScrollItemFlex,
 } from "./vegeloper.styles";
 
-
+import ScrollDownCTA from '../../components/Sections/ScrollDown/ScrollDown.component';
 
 const LandingPage = () => (
   <VegeloperContainer>
     <Header />
-    {/* <LeftSide /> */}
-    {/* <SideBar /> */}
     <HeroHeaderLeftContainer />
     <HeroHeaderRightContainer />
-    {/* <ScrollContainerFlex>
-      <ScrollItemFlex></ScrollItemFlex>
-      <ScrollItemFlex></ScrollItemFlex>
-      <ScrollItemFlex></ScrollItemFlex>
-      <ScrollItemFlex></ScrollItemFlex>
-      <ScrollItemFlex></ScrollItemFlex>
-    </ScrollContainerFlex> */}
-    {/* <Skills /> */}
-
-    {/* <Cards /> */}
-
+    <ScrollDownCTA />
+    <ScrollHorizontal/>
     <MiniCards />
-    {/* <Features /> */}
-    <RightSide />
   </VegeloperContainer>
 );
 
 export default LandingPage;
 
+
+// <ScrollContainerFlex>
+//   <ScrollCardContainer>
+//     <ScrollCardItem>
+//       {/* <figure /> */}
+//       <div className="iconTest">
+//         <i className=" icon-basic-heart"></i>
+//       </div>
+//       <h3 className="heading-tertiary ">Explore the world</h3>
+//       <span />
+//       <p className="feature-box__text">
+//         shaja baja much loven disch very guten disch shaja baja much loven disch
+//         very guten disch
+//       </p>
+//       <div className="technologies">
+//         <i className=" icon-basic-heart"></i>
+//         <i className=" icon-basic-heart"></i>
+//         <i className=" icon-basic-heart"></i>
+//       </div>
+//     </ScrollCardItem>
+//   </ScrollCardContainer>
+
+//   <ScrollCardContainer>
+//     <ScrollCardItem>
+//       <div className="iconTest">
+//         <i className=" icon-basic-heart"></i>
+//       </div>
+//       <h3 className="heading-tertiary ">Explore the world</h3>
+//       <span />
+//       <p className="feature-box__text">
+//         shaja baja much loven disch very guten disch shaja baja much loven disch
+//         very guten disch
+//       </p>
+//       <div className="technologies">
+//         <i className=" icon-basic-heart"></i>
+//         <i className=" icon-basic-heart"></i>
+//       </div>
+//     </ScrollCardItem>
+//   </ScrollCardContainer>
+//   <ScrollCardContainer>
+//     <ScrollCardItem>
+//       <div className="iconTest">
+//         <i className=" icon-basic-heart"></i>
+//       </div>
+
+//       <h3 className="heading-tertiary ">Explore the world</h3>
+//       <span />
+//       <p className="feature-box__text">
+//         shaja baja much loven disch very guten disch shaja baja much loven disch
+//         very guten disch
+//       </p>
+//       <div className="technologies">
+//         <i className=" icon-basic-heart"></i>
+//         <i className=" icon-basic-heart"></i>
+//         <i className=" icon-basic-heart"></i>
+//         <i className=" icon-basic-heart"></i>
+//       </div>
+//     </ScrollCardItem>
+//   </ScrollCardContainer>
+//   <ScrollCardContainer>
+//     <ScrollCardItem>
+//       <div className="iconTest">
+//         <i className=" icon-basic-heart"></i>
+//       </div>
+
+//       <h3 className="heading-tertiary ">Explore the world</h3>
+//       <span />
+//       <p className="feature-box__text">
+//         shaja baja much loven disch very guten disch shaja baja much loven disch
+//         very guten disch
+//       </p>
+//       <div className="technologies">
+//         <i className=" icon-basic-heart"></i>
+//         <i className=" icon-basic-heart"></i>
+//       </div>
+//     </ScrollCardItem>
+//   </ScrollCardContainer>
+// </ScrollContainerFlex>;
 
 
 

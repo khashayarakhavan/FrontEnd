@@ -26,14 +26,13 @@ export const HeroHeaderLeft = styled.div`
   grid-row: 2 / span 1;
   grid-column: center-start / center-end;
   position: relative;
-${'' /* background: lightblue; */}
-  ${"" /* margin-top: clamp(50px, 16.6666vw, 16.6666vw); //before */}
+
   margin-top: clamp(30px, 10vw, 10vw);
-  height: clamp(88.83333vw, 50vh, 50vh);
+  margin-top: clamp(30px, 10vw, 10vw);
+  ${"" /* height: clamp(88.83333vw, 50vh, 50vh); */}
   max-width: 100%;
   z-index: 100;
 
-  ${"" /* background: lightblue; */}
   text-rendering: optimizeLegibility;
   overflow-wrap: break-word;
 
@@ -44,14 +43,14 @@ ${'' /* background: lightblue; */}
   margin-top: 0;
   `}
 
-  ${respond.pc.min`
-    grid-column: center-start / col-end 4;
-    height: 50vh;
-    height: 70vh;
-  `}
-
   ${respond.tablet.large`
     grid-column: center-start / center-end !important;
+  `}
+  
+  ${respond.pc.min`
+    grid-column: center-start / col-end 4;
+    height: 60vh;
+    height: 34.375vw;
   `}
 `;
 
@@ -63,7 +62,7 @@ ${'' /* background: lightblue; */}
 
 export const HeroHeaderRight = styled.div`
   grid-column: center-start / center-end;
-  grid-row: 3 / span 1;
+  grid-row: 4 / span 1;
   height: 50vh;
   height: min-content;
   height: minmax(50vh, min-content);
@@ -89,8 +88,10 @@ export const HeroHeaderRight = styled.div`
   ${respond.pc.min`
     grid-row: 2 / span 1;
     grid-column: col-start 5 / center-end;
+    
     height: 50vh;
-    height: 70vh;
+    height: 60vh;
+    height: 34.375vw;
     padding-bottom: 5vh;   
     ${"" /* margin-top: -5vh; */}
   `}
@@ -100,16 +101,38 @@ export const Heading = styled.div`
   position: relative;
   display: block;
   width: 100%;
+  overflow-wrap: normal;
+  word-break: keep-all;
+  ${respond.pc.min`
+  .verb {
+    display: inline; 
+  }
+
+  .name {
+    ${"" /* display: block; */}
+    display: inline;
+    margin-left: 3.315vw;
+    
+    ${"" /* margin-left: 3.315rem;
+    margin-left: 3.23730468vw; */}
+  }
+  `}
 
   ${fonts.mixins.heroHeader}
   font-size: clamp(2.5rem, 8.3vw, 8.3vw);
+  font-size: clamp(4.7rem, 15.666666vw, 15.666666vw);
+  font-size: 12.3333333vw;
+  font-size: 12.2360833vw;
+  font-size: 15.2360833vw;
   line-height: clamp(3rem, 10vw, 10vw);
+  line-height: 1;
   letter-spacing: 0px;
   font-style: normal;
   color: ${colors.secondary.darkest};
 
   text-rendering: optimizeLegibility;
   padding-top: clamp(6rem, 20vw, 20vw);
+  padding-top: clamp(30px, 10vw, 10vw);
   padding-left: clamp(30px, 10vw, 10vw);
 
   ${respond.mobile.max`
@@ -118,6 +141,7 @@ export const Heading = styled.div`
   ${respond.pc.min`
     font-size: clamp(3.9rem, 3.80859375vw, 3.80859375vw);
     line-height: clamp(60px, 5.8593vw, 5.8593vw);  
+    line-height: 1;  
     padding-top: clamp(1rem, 5.859375vw, 5.859375vw);
   `}
 `;
@@ -138,15 +162,18 @@ export const TEXT = styled.span`
   line-height: clamp(30px, 10vw, 10vw);
   font-family: "Lato", sans-serif;
   font-family: "Open Sans", sans-serif;
-  font-family: "Roboto Condensed", sans-serif;
   font-family: "Open Sans Condensed", sans-serif;
   font-family: "EB Garamond", serif;
   font-family: "Cabin", sans-serif;
   font-family: "Roboto Slab", serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   font-size: clamp(10px, 3.333vw, 3.333vw);
-  padding-left: clamp(32px, 10.666vw, 10.666vw);
+  font-size: 5.9vw;
+  font-size: 9.1vw;
+  margin-top: 20px;
+  padding-left: clamp(34px, 10.666vw, 10.666vw);
 
   ${respond.mobile.max`
     padding-left: clamp(3px, 0.5vw, 0.5vw);
@@ -156,8 +183,13 @@ export const TEXT = styled.span`
     padding-left: clamp(2px,0.1953125vw, 0.1953125vw);
     font-size: clamp(1rem, 0.9765625vw, 0.9765625vw);
     font-size: clamp(1.56rem, 1.5234375vw, 1.5234375vw);
+    font-size: 2vw;
     line-height: clamp(30px, 2.9296vw, 2.9296vw);  
   `}
+
+  .love {
+    margin-top: 3rem; 
+  }
 `;
 
 
@@ -168,14 +200,68 @@ export const LottieContainer = styled.div`
   height: 40vw;
   height: min-content;
   height: 70vw;
+  height: 96vw;
   width: 100%;
-  ${respond.tablet.max`
+  
+  ${respond.mobile.max`
+    height: 80vw;
+  `}
+  ${respond.tablet.large`
     height: 70vw !important;
   `}
   ${respond.pc.min`
     height: 32.5vw; 
   `}
 `;
+
+// export const ScrollDownCTA = styled.section`
+//   ${'' /* grid-column: center-start/ center-end; */}
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: center;
+// `;
+// export const ArrowContainer = styled.div`
+//   margin-top: -2rem;
+//   display: flex;
+//   position: relative;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   ${'' /* height: 150px; */}
+// `;
+
+// export const Arrow = styled.svg`
+//    height: 80px;
+//   width: 40px;
+
+//   path {
+//     stroke: #ffffff;
+//     stroke: ${colors.accent.lightest};
+//     fill: transparent;
+    
+//     stroke-width: 4px;
+//     animation: arrowDown 2s infinite; 
+//   }
+//   path.a1 {
+//     animation-delay: -0.5s;
+//   }
+
+//   @keyframes arrowDown /*Safari and Chrome*/ {
+//     0% {
+//       opacity: 0;
+//       transform: translateY(10px);
+//     }
+//     80% {
+//       opacity: 1;
+//       transform: translateY(50px);
+//     }
+//     100% {
+//       opacity: 0;
+//       transform: translateY(50px);
+//     }
+//   }
+// `;
 
 
 export const Behind = styled.span`
@@ -196,8 +282,8 @@ export const Front = styled.span`
 export const Skill_1 = styled.span`
   ${events.mixins.onHover.palePink};
   ${mixins.flex.inlineCenter};
-  flex: 0 0 30%;
-  flex: 0 0 20%; //before
+  ${'' /* flex: 0 0 30%; */}
+  ${'' /* flex: 0 0 20%; //before */}
   animation: ${background_change(colors.palePink)} 3s 2s infinite;
   ${'' /* width: 60px;
   height: 50px; */}
@@ -210,8 +296,8 @@ export const Skill_1 = styled.span`
 export const Skill_2 = styled.span`
   ${events.mixins.onHover.palePink};
   ${mixins.flex.inlineCenter};
-  flex: 0 0 30%; 
-  flex: 0 0 25%; // before
+  ${'' /* flex: 0 0 30%; 
+  flex: 0 0 25%; // before */}
   animation: ${background_change(colors.paleYellow)} 3s 3.5s infinite;
   &:hover {
     background-color: ${colors.paleYellow};
@@ -231,11 +317,12 @@ export const Skill_2 = styled.span`
     z-index: 1000;
   } */}
 `;
+
 export const Skill_3 = styled.span`
   ${events.mixins.onHover.palePink};
   ${mixins.flex.inlineCenter};
-  flex: 0 0 30%;
-  flex: 0 0 19.75%; //before
+  ${'' /* flex: 0 0 30%;
+  flex: 0 0 19.75%; //before */}
   ${'' /* line-height: 10rem; */}
   
  
@@ -250,15 +337,19 @@ export const Skill_3 = styled.span`
 `;
 export const SkillTotal = styled.div`
   display: flex;
-  flex-wrap: nowrap;
-  overflow-wrap: normal;
   word-break: normal;
   justify-content: space-between;
   align-items: center;
   width: clamp(180px, 60vw, 60vw);
+  width: 100%;
+  width: 93%;
+  ${'' /* flex-wrap: nowrap; */}
+  ${'' /* overflow-wrap: normal; */}
 
   & > * {
     height: clamp(20px, 6.66666vw, 6.66666vw);
+    height: 10vw;
+    
     ${respond.pc.min`
       height: clamp(20px, 1.95312vw, 1.95312vw);
       height: clamp(40px, 3.90625vw, 3.90625vw);
@@ -277,9 +368,11 @@ export const SkillTotal = styled.div`
 
 export const BackgroundFigure = styled.div`
   transition: all 0.5s;
-  ${'' /* animation: ${hoverOff} 1s infinite linear; */}
+  ${"" /* animation: ${hoverOff} 1s infinite linear; */}
   animation: ${hoverOff} 1s infinite linear;
   animation: ${ScaleY} 1s infinite linear;
+  animation: ${bubbleGumScale} 2.5s infinite linear;
+  animation: ${bubbleGumScale} 4.5s infinite linear;
   position: absolute;
   width: 100%;
   height: clamp(5.6rem, 18.333vw, 18.333vw);
@@ -296,14 +389,18 @@ export const BackgroundFigure = styled.div`
 `;
 
 export const Button = styled.div`
+  transform: scale(1.2);
   justify-self: flex-start;
   align-self: flex-start;
-  margin-top: clamp(20px, 6.6666vw, 6.6666vw);
+  margin-top: 60px;
+  margin-top: clamp(60px, 20vw, 20vw);
   margin-bottom: clamp(10px, 3.33333vw, 3.33333vw);
+  margin-bottom: clamp(30px, 3.33333vw, 3.33333vw);
   ${"" /* margin-left: clamp(32px, 10.666vw, 10.666vw);
   margin-left: 20px; */}
   margin-left: clamp(25px, 4.1666666vw, 4.1666666vw);
   margin-left: clamp(32px, 10.666vw, 10.666vw);
+  margin-left: clamp(50px, 16.666666vw, 16.666666vw);
   position: relative;
   width: clamp(129.467px, 43.155666vw, 43.155666vw);
   height: clamp(5.6rem, 18.666vw, 18.666vw);
@@ -361,7 +458,7 @@ export const Button = styled.div`
 
   ${respond.mobile.max`
     margin-left: 3px;   
-    margin-left: clamp(3px, 0.5vw, 0.5vw);   
+    margin-left: clamp(35px, 5.833333vw, 5.833333vw);   
   `}
 
   ${respond.pc.min`

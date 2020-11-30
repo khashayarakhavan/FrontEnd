@@ -30,6 +30,9 @@ import {SvgIcon} from './heroHeader.styles';
 //Design
 import { Accent_fireOrange , Accent_mateBlue } from '../../../design/effects.styles';
 import {
+  Arrow,
+  ArrowContainer,
+  ScrollDownCTA,
   Button,
   SkillTotal,
   LottieContainer,
@@ -69,27 +72,39 @@ export const HeroHeaderLeftContainer = (props) => {
       /> */}
 
       <Heading>
-        <p>
+        <p className="hi">
           Hi<Accent_fireOrange>.</Accent_fireOrange>
         </p>
-        <p>
+        <p className="verb">
           I<Accent_mateBlue>’</Accent_mateBlue>m
-          <Accent_fireOrange>&nbsp;K</Accent_fireOrange>hashi
+        </p>
+        <p className="name">
+          <Accent_fireOrange>K</Accent_fireOrange>hashi
         </p>
       </Heading>
-      <TEXT>
-        <p>a full stack web developer and I love &nbsp;</p>
+      
+        <TEXT>
+          <p style={{ display: "inline" }}>a web developer</p>
+          {/* <p className="love" style={{ display: "inline-block" }}>and I love</p>
         <SkillTotal>
           <Skill_1>coding</Skill_1>,<Skill_2>science</Skill_2>&
           <Skill_3>nature</Skill_3>
-        </SkillTotal>
-      </TEXT>
+        </SkillTotal> */}
+        </TEXT>
+     
       <Button>
         <p>Pleased to meet you</p> <SvgIcon />
         {/* <br /> */}
         <span>tea or coffee ? </span>
         <BackgroundFigure></BackgroundFigure>
       </Button>
+      {/* <ScrollDownCTA>
+        <ArrowContainer>
+        <Arrow>
+          <path stroke-linecap="round" class="a1" d="M0 0 L20 22 L40 0"></path>
+        </Arrow>
+        </ArrowContainer>
+      </ScrollDownCTA> */}
     </HeroHeaderLeft>
   );
 };
