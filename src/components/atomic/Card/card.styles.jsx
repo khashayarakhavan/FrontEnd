@@ -2,68 +2,166 @@
 import styled from "styled-components";
 //Design
 import fonts from '../../../design/fonts.styles';
-import shadows from '../../../design/shadows.styles';
 import colors from '../../../design/colors';
+import shadows from '../../../design/shadows.styles';
 import {respond} from '../../../design/responsive';
+import nat10 from "../../../assets/img/nat-10.jpg";
 
+//Code
+export const Card = styled.div`
+  ${"" /* ${shadows.mixins.neumorphic.original} */}
+  // Functionality and rotation.
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 25vw;
+  ${"" /* width: 20vw; */}
+  &:not(:last-child) {
+    margin-right: 5rem;
+  }
+  box-sizing: content-box;
+  border-radius: clamp(15px, 5vw, 20px);
+  ${"" /* ${shadows.mixins.neumorphic.original}; */}
+  width: clamp(15rem, 14.6484375vw, 14.6484375vw);
+  padding: 5.5555555vw 2.7777777vw 3.5555555vw;
+  margin: clamp(2rem, 1.953125vw, 1.953125vw);
 
-export const ScrollContainerFlex = styled.div`
-  &::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: #f5f5f5;
+  div {
+    height: 35vw;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+    ${"" /* box-shadow: 0 1.5rem 4rem rgba(black, 0.15); */}
   }
 
-  &::-webkit-scrollbar {
-    width: 1px;
-    height: 1px;
-    background-color: #f5f5f5;
+  .heads {
+    background-color: white;
+    ${shadows.mixins.neumorphic.original}
   }
 
-  &::-webkit-scrollbar-thumb:horizontal {
-    background-color: ${colors.secondary.lightest};
-    background-color: #0ae;
-    background-image: -webkit-gradient(
-      linear,
-      0 0,
-      0 100%,
-      color-stop(0.5, rgba(255, 255, 255, 0.2)),
-      color-stop(0.5, transparent),
-      to(transparent)
+  .tails {
+    transform: rotateY(180deg);
+    ${shadows.mixins.neumorphic.original}
+    background-image: linear-gradient(
+      to right bottom,
+      ${colors.secondary.lightest},
+      ${colors.secondary.darkest}
     );
   }
 
-  width: 100vw;
-  height: 100px;
-  height: min-content;
-  grid-column: full-start/ full-end;
-  grid-column: cover-start/ cover-end;
-  font-size: 20px;
+  &:hover .heads {
+    transform: rotateY(-180deg);
+  }
 
-  display: flex;
-  flex-wrap: nowrap;
-  white-space: nowrap; // Allow continuing into the white space.
-  overflow: auto;
+  &:hover .tails {
+    transform: rotateY(0deg);
+  }
+`;
 
-  ${respond.pc.min`
-  grid-column: full-start/ full-end;
-  width: 100%;
-  padding: 5rem 1rem; 
- 
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+export const CardPicture = styled.div`
+  background-size: cover;
+  height: 15rem;
+  background-blend-mode: screen;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  // border-top-left-radius: 5px;
+  // border-top-right-radius: 5px;
+  // border-bottom-left-radius: 5px;
+  // border-bottom-right-radius: 5px;
+  background-image: url(../../assets/img/nat-10.jpg);
+  .P1 {
+  }
 
-  `}
+  .P2 {
+    background-image: linear-gradient(
+        to right bottom,
+        ${colors.secondary.lightest},
+        ${colors.secondary.darkest}
+      ),
+      url(../img/nat-7.jpg);
+  }
+  .P3 {
+    background-image: linear-gradient(
+        to right bottom,
+        ${colors.secondary.lightest},
+        ${colors.secondary.darkest}
+      ),
+      url(../img/nat-8.jpg);
+  }
+`;
+
+export const Heading = styled.div`
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: right;
+  text-transform: uppercase;
+  color: white;
+  position: absolute;
+  top: 6rem;
+  right: 1rem;
+  width: 75%;
+
+  span {
+    padding: 0.1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    .P1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba(${colors.secondary.lightest}, 0.85),
+        rgba(${colors.secondary.darkest}, 0.85)
+      );
+    }
+    .P2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba(${colors.accent.lightest}, 0.85),
+        rgba(${colors.accent.lightest}, 0.85)
+      );
+    }
+    .P3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba(${colors.neutrals.lightest}, 0.85),
+        rgba(${colors.accent.darkest}, 0.85)
+      );
+    }
+  }
 `;
 
 
 
+export const Details = styled.div`
+  padding: 3rem;
+
+  ul {
+    list-style: none;
+    width: 80%;
+    margin: 0 auto;
+
+    li {
+      text-align: center;
+      font-size: 1.5rem;
+      padding: 1rem;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid ${colors.neutrals.light};
+      }
+    }
+  }
+`;
+
 export const CTA = styled.div`
-  position: absolute;
+  ${'' /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */}
   width: 90%;
   text-align: center;
 
@@ -107,7 +205,7 @@ export const Button = styled.a`
     background-color: #094e7c;
     color: rgba(252, 253, 253, 0.87);
     transform: translateY(-2px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); 
+    ${'' /* box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);  */}
   }
 
   &::after {
@@ -123,13 +221,11 @@ export const Button = styled.a`
     transition: all .5s;
   }
 
-
-  
   &:hover {
     filter: brightness(130%);
     ${"" /* color: rgba(black, 0.55); */}
     transform: translateY(-8px);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }    
+    ${'' /* box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }     */}
   }
 
   &:hover::after {
@@ -139,28 +235,18 @@ export const Button = styled.a`
 `;
 
 
-export const ScrollCardItemBack = styled.div`
-  transition: all 0.8s ease;
-  ${"" /*  */}
 
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  ${"" /* */}
-  height: 35vw;
-  background: red;
 
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  overflow: hidden;
-  transform: rotateY(180deg);
-`;
+
+
+
 
 
 export const ScrollCardItem = styled.div`
-
+   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   transition: all 0.8s ease;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -176,16 +262,16 @@ export const ScrollCardItem = styled.div`
   overflow-wrap: normal;
   word-wrap: normal;
   word-break: keep-all;
-  width: 12rem;
   width: 33.33333vw;
+  width: 12rem;
   padding: 2rem 1rem 3rem;
   padding: 5.5555555vw 2.7777777vw 8.3333333vw;
   padding: 5.5555555vw 2.7777777vw 3.5555555vw;
   border-radius: 15px;
   border-radius: 5vw;
   border-radius: clamp(15px, 5vw, 20px);
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.22);
-  ${shadows.mixins.neumorphic.original}
+  ${'' /* box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.22); */}
+
   transition: all 0.4s;
   box-sizing: content-box;
 
@@ -354,79 +440,18 @@ export const ScrollCardItem = styled.div`
   }
 
   &:hover {
-    background: ${colors.neutrals.lighter};
+    ${'' /* background: ${colors.neutrals.lighter};
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.52);
     box-shadow: 4px 4px 10px 0px ${colors.shadows.dark},
       -4px -4px 10px 0px ${colors.highlights.lightest};
-    }
+    } */}
   }
   &:active {
     transition: all 0.4s;
-    box-shadow: 4px 4px 10px 0px ${colors.shadows.dark},
+    ${'' /* box-shadow: 4px 4px 10px 0px ${colors.shadows.dark},
       -4px -4px 10px 0px ${colors.accent.lightest};
-    box-shadow: ${shadows.neumorphic.original};
+    box-shadow: ${shadows.neumorphic.original}; */}
   }
 `;
 
 
-
-
-
-
-
-
-
-
-
-
-
-export const ScrollCardContainer = styled.div`
-  margin: 11.1111vw 5.555555vw;
-  margin: 4rem 6rem 4rem 2rem;
-  margin: 4rem 2rem 4rem 2rem;
-  margin: 13.333333vw 6.6666666vw;
-
-
- 
-
-  ${respond.pc.min`
-   margin: 4rem 2rem;
-   margin: 3.90625vw 1.953125vw;
-   margin: clamp(2rem,1.953125vw,1.953125vw);
-  `}
-
-  transition: all 0.8s ease;
-  &:last-child {
-    padding-right: clamp(5rem, 16.5555vw, 16.66666vw);
-
-    ${respond.pc.min`
-    padding-right: 0;
-    `}
-  }
-  &:first-child {
-    margin-left: clamp(5rem, 16.5555vw, 16.66666vw);
-
-    & > * {
-      background-color: ${colors.neutrals.lighter} !important;
-    }
-
-    ${respond.pc.min`
-    margin: clamp(2rem,1.953125vw,1.953125vw);
-    `}
-  }
-`;
-
-
-// export const Card = styled.div`
-//   perspective: 150rem;
-//   -moz-perspective: 150rem;
-//   position: relative;
-//   height: 35vw;
-
-//   :hover ${ScrollCardItem} {
-//     transform: rotateY(-180deg);
-//   }
-//   :hover ${ScrollCardItemBack} {
-//     transform: rotateY(0deg);
-//   }
-// `;

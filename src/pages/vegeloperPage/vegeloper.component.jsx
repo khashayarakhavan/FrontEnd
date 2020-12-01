@@ -20,6 +20,7 @@ import {
 
 //Section
 import {YouTube} from '../../components/Sections/YouTube/youTube.component';
+import Projects from '../../components/Sections/Projects/projects.component';
 
 //Design
 import {
@@ -37,6 +38,7 @@ const LandingPage = () => (
     <Heading/>
     <YouTube />
     <ScrollHorizontal/>
+    <Projects />
     <MiniCards />
   </VegeloperContainer>
 );
