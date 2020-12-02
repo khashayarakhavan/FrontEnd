@@ -2,7 +2,6 @@
 import React from 'react';
 //Design
 import colors from '../../../design/colors';
-
 //Style
 import {
   CardPicture,
@@ -11,6 +10,7 @@ import {
   CTA,
   Button,
   Card,
+  CardLegacyContainer,
   ScrollCardItem,
 } from "./card.styles";
 
@@ -56,6 +56,56 @@ const Template = () => {
     </Card>
   );
 };
+
+
+
+export const CardLegacy = () => {
+  return (
+    <CardLegacyContainer>
+      <ScrollCardItem className="heads">
+        {/* <figure /> */}
+        <div className="iconTest">
+          <i className=" icon-basic-heart"></i>
+        </div>
+        <h3 className="heading-tertiary ">Explore the world</h3>
+        <span />
+        <p className="feature-box__text">
+          shaja baja much loven disch very guten disch shaja baja much loven
+          disch very guten disch
+        </p>
+        <div className="technologies">
+          <i className=" icon-basic-heart"></i>
+          <i className=" icon-basic-heart"></i>
+          <i className=" icon-basic-heart"></i>
+        </div>
+      </ScrollCardItem>
+      <ScrollCardItem className="tails">
+        <CTA>
+          <div className="priceBox">
+            <p className="priceOnly">Only</p>
+            <p className="value">299$</p>
+          </div>
+          <Button>Book now!</Button>
+        </CTA>
+      </ScrollCardItem>
+      {/* <div className="tails">
+        <CTA>
+          <div className="priceBox">
+            <p className="priceOnly">Only</p>
+            <p className="value">299$</p>
+          </div>
+          <Button>Book now!</Button>
+        </CTA>
+      </div> */}
+    </CardLegacyContainer>
+  );
+};
+
+
+
+export default Template;
+
+
 // const Template = () => {
 //   return (
 //     <Card>
@@ -91,4 +141,3 @@ const Template = () => {
 //   );
 // };
 
-export default Template;

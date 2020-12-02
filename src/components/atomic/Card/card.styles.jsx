@@ -9,6 +9,41 @@ import nat10 from "../../../assets/img/nat-10.jpg";
 
 //Code
 export const Card = styled.div`
+  position: relative;
+  box-sizing: content-box;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  transition: all 0.4s;
+
+  height: 25vw;
+  width: 12rem;
+  width: 33.33333vw;
+  border-radius: 15px;
+
+  display: flex;
+  justify-items: flex-start;
+  flex-direction: column;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  padding: 2rem 1rem 3rem;
+  padding: 5.5555555vw 2.7777777vw 8.3333333vw;
+
+  overflow-wrap: normal;
+  word-wrap: normal;
+  word-break: keep-all;
+
+  ${shadows.mixins.neumorphic.original}
+
+  ${respond.pc.min`
+  padding: 2rem 1rem 3rem;
+  padding: 1.953125vw 0.9765625vw 2.9296875vw;
+  width: 15rem;
+  width: clamp(15rem, 14.6484375vw, 14.6484375vw);
+  `}
+`;
+
+export const CardLegacyContainer = styled.div`
   ${"" /* ${shadows.mixins.neumorphic.original} */}
   // Functionality and rotation.
   perspective: 150rem;
@@ -243,7 +278,7 @@ export const Button = styled.a`
 
 
 export const ScrollCardItem = styled.div`
-   position: absolute;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;

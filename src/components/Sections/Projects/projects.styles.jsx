@@ -9,21 +9,33 @@ import {respond} from '../../../design/responsive';
 //Code
 export const SectionProjectsContainers = styled.section`
   grid-column: full-start / full-end;
-  ${'' /* background-color: $color-grey-light-1; */}
-  ${'' /* padding: 25rem 10rem 15rem 10rem; */}
-  ${'' /* margin-top: -10rem; */}
-  height: min-content;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-
-  ${'' /* @include respond(tab-port) {
-    padding: 20rem 5rem 10rem 5rem;
-  } */}
-  ${'' /* ${respond.mobile.max`
-    padding: 20rem 5rem 10rem 5rem;
-  `} */}
+  ${'' /* height: min-content; */}
+  ${'' /* width: 100%; */}
+  padding: 5rem 1rem;
 `;
+
+
+export const FlexContainer = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  ${respond.pc.min`
+    flex-direction: row;
+  `}
+`;
+export const ProjectCardContainer = styled.div`
+  transition: all 0.4s;
+  margin: 11.1111vw 5.555555vw;
+
+  ${respond.pc.min`
+  margin: clamp(2rem, 1.953125vw, 1.953125vw); 
+  `}
+`;
+
 
 export const CardContainer = styled.div`
 
