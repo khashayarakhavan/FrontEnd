@@ -25,9 +25,9 @@ import {
         <ProjectCardContainer>
           <CardNeumorphicComponent />
         </ProjectCardContainer>
-        <ProjectCardContainer>
+        {/* <ProjectCardContainer>
           <CardLegacyComponent />
-        </ProjectCardContainer>
+        </ProjectCardContainer> */}
       </FlexContainer>
     </SectionProjectsContainers>
   );

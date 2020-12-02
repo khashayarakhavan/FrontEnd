@@ -11,14 +11,16 @@ import {
   Button,
   CardNeumorphic,
   CardLegacy,
-  ScrollCardItem,
+  Side,
+  PriceBox,
+
 } from "./card.styles";
 
 //Code
 export const CardNeumorphicComponent = () => {
   return (
     <CardNeumorphic>
-      <ScrollCardItem className="heads">
+      <Side className="heads">
         {/* <figure /> */}
         <div className="iconTest">
           <i className=" icon-basic-heart"></i>
@@ -34,16 +36,16 @@ export const CardNeumorphicComponent = () => {
           <i className=" icon-basic-heart"></i>
           <i className=" icon-basic-heart"></i>
         </div>
-      </ScrollCardItem>
-      <ScrollCardItem className="tails">
-        <CTA>
-          <div className="priceBox">
-            <p className="priceOnly">Only</p>
-            <p className="value">299$</p>
-          </div>
-          <Button>Book now!</Button>
-        </CTA>
-      </ScrollCardItem>
+      </Side>
+        
+      <Side className="tails">
+        <PriceBox>
+          <p className="priceOnly">Only</p>
+          <p className="value">299$</p>
+        </PriceBox>
+        <Button>Book now!</Button>
+      </Side>
+       
     </CardNeumorphic>
   );
 };
@@ -53,7 +55,7 @@ export const CardNeumorphicComponent = () => {
 export const CardLegacyComponent = () => {
   return (
     <CardLegacy>
-      <ScrollCardItem className="heads">
+      <Side className="heads">
         {/* <figure /> */}
         <div className="iconTest">
           <i className=" icon-basic-heart"></i>
@@ -69,8 +71,8 @@ export const CardLegacyComponent = () => {
           <i className=" icon-basic-heart"></i>
           <i className=" icon-basic-heart"></i>
         </div>
-      </ScrollCardItem>
-      <ScrollCardItem className="tails">
+      </Side>
+      <Side className="tails">
         <CTA>
           <div className="priceBox">
             <p className="priceOnly">Only</p>
@@ -78,7 +80,7 @@ export const CardLegacyComponent = () => {
           </div>
           <Button>Book now!</Button>
         </CTA>
-      </ScrollCardItem>
+      </Side>
       {/* <div className="tails">
         <CTA>
           <div className="priceBox">
