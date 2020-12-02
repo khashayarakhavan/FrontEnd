@@ -9,15 +9,50 @@ import {
   Details,
   CTA,
   Button,
-  Card,
-  CardLegacyContainer,
+  CardNeumorphic,
+  CardLegacy,
   ScrollCardItem,
 } from "./card.styles";
 
 //Code
-const Template = () => {
+export const CardNeumorphicComponent = () => {
   return (
-    <Card>
+    <CardNeumorphic>
+      <ScrollCardItem className="heads">
+        {/* <figure /> */}
+        <div className="iconTest">
+          <i className=" icon-basic-heart"></i>
+        </div>
+        <h3 className="heading-tertiary ">Explore the world</h3>
+        <span />
+        <p className="feature-box__text">
+          shaja baja much loven disch very guten disch shaja baja much loven
+          disch very guten disch
+        </p>
+        <div className="technologies">
+          <i className=" icon-basic-heart"></i>
+          <i className=" icon-basic-heart"></i>
+          <i className=" icon-basic-heart"></i>
+        </div>
+      </ScrollCardItem>
+      <ScrollCardItem className="tails">
+        <CTA>
+          <div className="priceBox">
+            <p className="priceOnly">Only</p>
+            <p className="value">299$</p>
+          </div>
+          <Button>Book now!</Button>
+        </CTA>
+      </ScrollCardItem>
+    </CardNeumorphic>
+  );
+};
+
+
+
+export const CardLegacyComponent = () => {
+  return (
+    <CardLegacy>
       <ScrollCardItem className="heads">
         {/* <figure /> */}
         <div className="iconTest">
@@ -53,57 +88,13 @@ const Template = () => {
           <Button>Book now!</Button>
         </CTA>
       </div> */}
-    </Card>
+    </CardLegacy>
   );
 };
 
 
 
-export const CardLegacy = () => {
-  return (
-    <CardLegacyContainer>
-      <ScrollCardItem className="heads">
-        {/* <figure /> */}
-        <div className="iconTest">
-          <i className=" icon-basic-heart"></i>
-        </div>
-        <h3 className="heading-tertiary ">Explore the world</h3>
-        <span />
-        <p className="feature-box__text">
-          shaja baja much loven disch very guten disch shaja baja much loven
-          disch very guten disch
-        </p>
-        <div className="technologies">
-          <i className=" icon-basic-heart"></i>
-          <i className=" icon-basic-heart"></i>
-          <i className=" icon-basic-heart"></i>
-        </div>
-      </ScrollCardItem>
-      <ScrollCardItem className="tails">
-        <CTA>
-          <div className="priceBox">
-            <p className="priceOnly">Only</p>
-            <p className="value">299$</p>
-          </div>
-          <Button>Book now!</Button>
-        </CTA>
-      </ScrollCardItem>
-      {/* <div className="tails">
-        <CTA>
-          <div className="priceBox">
-            <p className="priceOnly">Only</p>
-            <p className="value">299$</p>
-          </div>
-          <Button>Book now!</Button>
-        </CTA>
-      </div> */}
-    </CardLegacyContainer>
-  );
-};
-
-
-
-export default Template;
+// export default Template;
 
 
 // const Template = () => {

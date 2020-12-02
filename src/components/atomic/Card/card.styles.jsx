@@ -7,62 +7,97 @@ import shadows from '../../../design/shadows.styles';
 import {respond} from '../../../design/responsive';
 import nat10 from "../../../assets/img/nat-10.jpg";
 
-//Code
-export const Card = styled.div`
+/*Code
+__^__^__^__^__^__^__^__^__^__^__^__^__^__^__^__^__^__^__^__^
+*/
+
+
+//CardNeumorphic
+export const CardNeumorphic = styled.div`
   position: relative;
-  box-sizing: content-box;
-  perspective: 150rem;
-  -moz-perspective: 150rem;
+  box-sizing: border-box;
   transition: all 0.4s;
 
-  height: 25vw;
-  width: 12rem;
-  width: 33.33333vw;
-  border-radius: 15px;
-
-  display: flex;
-  justify-items: flex-start;
-  flex-direction: column;
-
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  padding: 2rem 1rem 3rem;
-  padding: 5.5555555vw 2.7777777vw 8.3333333vw;
-
-  overflow-wrap: normal;
-  word-wrap: normal;
-  word-break: keep-all;
-
-  ${shadows.mixins.neumorphic.original}
-
-  ${respond.pc.min`
-  padding: 2rem 1rem 3rem;
-  padding: 1.953125vw 0.9765625vw 2.9296875vw;
-  width: 15rem;
-  width: clamp(15rem, 14.6484375vw, 14.6484375vw);
-  `}
-`;
-
-export const CardLegacyContainer = styled.div`
-  ${"" /* ${shadows.mixins.neumorphic.original} */}
-  // Functionality and rotation.
   perspective: 150rem;
   -moz-perspective: 150rem;
-  position: relative;
+
+  width: clamp(15rem, 14.6484375vw, 14.6484375vw);
   height: 25vw;
-  ${"" /* width: 20vw; */}
+  border-radius: clamp(15px, 5vw, 20px);
+
+  margin: clamp(2rem, 1.953125vw, 1.953125vw);
   &:not(:last-child) {
     margin-right: 5rem;
   }
-  box-sizing: content-box;
-  border-radius: clamp(15px, 5vw, 20px);
-  ${"" /* ${shadows.mixins.neumorphic.original}; */}
-  width: clamp(15rem, 14.6484375vw, 14.6484375vw);
+
   padding: 5.5555555vw 2.7777777vw 3.5555555vw;
-  margin: clamp(2rem, 1.953125vw, 1.953125vw);
+
+  ${'' /* background: red; */}
 
   div {
-    height: 35vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.8s ease;
+
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+  }
+
+  .heads {
+    background-color: white;
+    ${shadows.mixins.neumorphic.original}
+  }
+
+  .tails {
+    transform: rotateY(180deg);
+    ${shadows.mixins.neumorphic.original}
+    background-image: linear-gradient(
+      to right bottom,
+      ${colors.secondary.lightest},
+      ${colors.secondary.darkest}
+    );
+  }
+
+  &:hover .heads {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover .tails {
+    transform: rotateY(0deg);
+  }
+`;
+
+
+
+//CardLegacy
+export const CardLegacy = styled.div`
+  position: relative;
+  box-sizing: content-box;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+
+  background: blue;
+
+  width: clamp(15rem, 14.6484375vw, 14.6484375vw);
+  height: 25vw;
+  border-radius: clamp(15px, 5vw, 20px);
+
+  margin: clamp(2rem, 1.953125vw, 1.953125vw);
+  &:not(:last-child) {
+    margin-right: 5rem;
+  }
+
+  padding: 5.5555555vw 2.7777777vw 3.5555555vw;
+
+  div {
+    height: 25vw;
+    ${'' /* height: 100%; */}
     transition: all 0.8s ease;
     position: absolute;
     top: 0;
@@ -73,7 +108,6 @@ export const CardLegacyContainer = styled.div`
     -moz-backface-visibility: hidden;
     border-radius: 20px;
     overflow: hidden;
-    ${"" /* box-shadow: 0 1.5rem 4rem rgba(black, 0.15); */}
   }
 
   .heads {
@@ -193,10 +227,6 @@ export const Details = styled.div`
 `;
 
 export const CTA = styled.div`
-  ${'' /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */}
   width: 90%;
   text-align: center;
 
@@ -240,7 +270,6 @@ export const Button = styled.a`
     background-color: #094e7c;
     color: rgba(252, 253, 253, 0.87);
     transform: translateY(-2px);
-    ${'' /* box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);  */}
   }
 
   &::after {
@@ -257,10 +286,7 @@ export const Button = styled.a`
   }
 
   &:hover {
-    filter: brightness(130%);
-    ${"" /* color: rgba(black, 0.55); */}
     transform: translateY(-8px);
-    ${'' /* box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }     */}
   }
 
   &:hover::after {
@@ -278,6 +304,7 @@ export const Button = styled.a`
 
 
 export const ScrollCardItem = styled.div`
+  ${'' /* box-sizing: content-box; */}
   position: absolute;
   top: 0;
   left: 0;
@@ -305,10 +332,9 @@ export const ScrollCardItem = styled.div`
   border-radius: 15px;
   border-radius: 5vw;
   border-radius: clamp(15px, 5vw, 20px);
-  ${'' /* box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.22); */}
+  ${"" /* box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.22); */}
 
   transition: all 0.4s;
-  box-sizing: content-box;
 
   display: flex;
   flex-direction: column;
@@ -475,17 +501,21 @@ export const ScrollCardItem = styled.div`
   }
 
   &:hover {
-    ${'' /* background: ${colors.neutrals.lighter};
+    ${
+      "" /* background: ${colors.neutrals.lighter};
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.52);
     box-shadow: 4px 4px 10px 0px ${colors.shadows.dark},
       -4px -4px 10px 0px ${colors.highlights.lightest};
-    } */}
+    } */
+    }
   }
   &:active {
     transition: all 0.4s;
-    ${'' /* box-shadow: 4px 4px 10px 0px ${colors.shadows.dark},
+    ${
+      "" /* box-shadow: 4px 4px 10px 0px ${colors.shadows.dark},
       -4px -4px 10px 0px ${colors.accent.lightest};
-    box-shadow: ${shadows.neumorphic.original}; */}
+    box-shadow: ${shadows.neumorphic.original}; */
+    }
   }
 `;
 

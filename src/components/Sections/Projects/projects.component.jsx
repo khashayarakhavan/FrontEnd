@@ -3,7 +3,10 @@ import React from 'react';
 //Design
 import colors from '../../../design/colors';
 //Component
-import Card, {CardLegacy} from '../../../components/atomic/Card/card.component';
+import {
+  CardNeumorphicComponent,
+  CardLegacyComponent,
+} from "../../../components/atomic/Card/card.component";
 //Style
 import {
   SectionProjectsContainers,
@@ -17,13 +20,13 @@ import {
     <SectionProjectsContainers>
       <FlexContainer>
         <ProjectCardContainer>
-          <Card />
+          <CardNeumorphicComponent />
         </ProjectCardContainer>
         <ProjectCardContainer>
-          <Card />
+          <CardNeumorphicComponent />
         </ProjectCardContainer>
         <ProjectCardContainer>
-          <CardLegacy />
+          <CardLegacyComponent />
         </ProjectCardContainer>
       </FlexContainer>
     </SectionProjectsContainers>

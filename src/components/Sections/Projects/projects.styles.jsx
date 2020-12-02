@@ -31,6 +31,8 @@ export const ProjectCardContainer = styled.div`
   transition: all 0.4s;
   margin: 11.1111vw 5.555555vw;
 
+
+
   ${respond.pc.min`
   margin: clamp(2rem, 1.953125vw, 1.953125vw); 
   `}
