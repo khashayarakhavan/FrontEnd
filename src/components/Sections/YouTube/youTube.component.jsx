@@ -16,6 +16,7 @@ import CartDropdown from '../../complex/cart-dropdown/cart-dropdown.component';
 //Design
 import { PrussianBlue_To_Orange } from '../../../design/effects.styles';
 import {
+  SectionYoutube,
   YouTubeContainer
 } from './youTube.styles';
 // src={"https://www.youtube.com/embed/gO6wh3-AOD4"}
@@ -28,21 +29,20 @@ export const YouTube = (props) => {
       </h4> */}
 
   return (
-
-    
-    <YouTubeContainer>
-      <iframe
-        id="ytplayer"
-        className="player"
-        type="text/html"
-        width="100%"
-        height="100%"
-        src={"https://www.youtube.com/embed/gO6wh3-AOD4"}
-        frameborder="0"
-        allowfullscreen
-      />
-    </YouTubeContainer>
-    
+    <SectionYoutube>
+      <YouTubeContainer>
+        <iframe
+          id="ytplayer"
+          className="player"
+          type="text/html"
+          width="100%"
+          height="100%"
+          src={"https://www.youtube.com/embed/gO6wh3-AOD4"}
+          frameborder="0"
+          allowfullscreen
+        />
+      </YouTubeContainer>
+    </SectionYoutube>
   );
 };
 
