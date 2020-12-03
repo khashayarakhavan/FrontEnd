@@ -33,24 +33,26 @@ import { ReactComponent as WebWeaverLine } from "../../../assets/SVG/WebWeaver-L
 // }
 
 export const YouTubeContainer = styled.div`
+  position: relative;
   grid-column: center-start / center-end;
   align-self: center;
   justify-self: center;
-  width: 100%;
+  
   width: 90%;
-  position: relative;
+  width: 100%;
+
   margin-top: 1rem;
   margin-bottom: 2rem;
+  
   padding-bottom: 56.25%; //16 x 9
   
+  display: flex;
+  justify-content: center;
+
   border-radius: 40px;
   overflow: hidden;
-  ${shadows.mixins.neumorphic.extra};
-
-  display: flex;
   
-  justify-content: center;
-  
+  ${shadows.mixins.neumorphic.extra};  
   
   ${respond.pc.min`
   grid-column: center-start / center-end;
