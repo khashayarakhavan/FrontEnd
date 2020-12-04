@@ -1,47 +1,40 @@
 //Basics
 import React from 'react';
 //State
-import { connect } from 'react-redux';
+
 //Selectors
-import { createStructuredSelector } from 'reselect';
-import { selectCartHidden } from '../../../redux/cart/cart.selectors';
-import { selectDarkMode } from "../../../redux/themes/themes.selectors";
-import { selectCurrentUser } from '../../../redux/user/user.selectors';
+
 //Actions
-import { toggleCartHidden } from "../../../redux/cart/cart.actions";
-import { toggleDarkMode } from "../../../redux/themes/themes.actions";
-import { signOutStart } from "../../../redux/user/user.actions";
+
 //Components
-import CartDropdown from '../../complex/cart-dropdown/cart-dropdown.component';
+
 //Design
-import { PrussianBlue_To_Orange } from '../../../design/effects.styles';
+
 import {
   SectionYoutube,
-  YouTubeContainer
-} from './youTube.styles';
-// src={"https://www.youtube.com/embed/gO6wh3-AOD4"}
+  YouTubeContainer,
+  YTContainer,
+  YT,
+} from "./youTube.styles";
 export const YouTube = (props) => {
-{/* <h1>
-      Wanna Know me in a minute?
-      </h1>
-      <h4>
-        Let's go!
-      </h4> */}
+
 
   return (
     <SectionYoutube>
-      <YouTubeContainer>
-        <iframe
-          id="ytplayer"
-          className="player"
-          type="text/html"
-          width="100%"
-          height="100%"
-          src={"https://www.youtube.com/embed/gO6wh3-AOD4"}
-          frameborder="0"
-          allowfullscreen
-        />
-      </YouTubeContainer>
+      <YTContainer>
+        <YT>
+          <iframe
+            id="ytplayer"
+            className="player"
+            type="text/html"
+            width="100%"
+            height="100%"
+            src={"https://www.youtube.com/embed/gO6wh3-AOD4"}
+            frameborder="0"
+            allowfullscreen
+          />
+        </YT>
+      </YTContainer>
     </SectionYoutube>
   );
 };
