@@ -28,7 +28,7 @@ import {
 import { ViewportProvider } from './design/viewPort';
 const HomePage = lazy(() => import('./pages/homepage/homepage.component'));
 const LandingPage = lazy(() => import('./pages/landingpage/landingpage.component'));
-const Vegeloper = lazy(() => import('./pages/vegeloperPage/vegeloper.component'));
+const Vegeloper = lazy(() => import('./pages/vegeloperPage/vegeloper.page'));
 const ShopPage = lazy(() => import('./pages/shop/shop.component'));
 const SignInAndSignUpPage = lazy(() =>
   import('./pages/sign-in-and-sign-up/sign-in-and-sign-up.component')

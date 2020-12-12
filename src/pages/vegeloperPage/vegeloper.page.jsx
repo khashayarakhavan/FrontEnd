@@ -29,7 +29,7 @@ import {
 
 import ScrollDownCTA from '../../components/Sections/ScrollDown/ScrollDown.component';
 
-const LandingPage = () => (
+const VegeloperPage = () => (
   <VegeloperContainer>
     <Header />
     <HeroHeaderLeftContainer />
@@ -43,7 +43,7 @@ const LandingPage = () => (
   </VegeloperContainer>
 );
 
-export default LandingPage;
+export default VegeloperPage;
 
 
 // <ScrollContainerFlex>

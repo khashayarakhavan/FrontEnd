@@ -139,24 +139,24 @@ export const Button = styled.a`
 `;
 
 
-export const ScrollCardItemBack = styled.div`
-  transition: all 0.8s ease;
-  ${"" /*  */}
+// export const ScrollCardItemBack = styled.div`
+//   transition: all 0.8s ease;
+//   ${"" /*  */}
 
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  ${"" /* */}
-  height: 35vw;
-  background: red;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   ${"" /* */}
+//   height: 35vw;
+//   background: red;
 
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  overflow: hidden;
-  transform: rotateY(180deg);
-`;
+//   backface-visibility: hidden;
+//   -webkit-backface-visibility: hidden;
+//   -moz-backface-visibility: hidden;
+//   overflow: hidden;
+//   transform: rotateY(180deg);
+// `;
 
 
 export const ScrollCardItem = styled.div`
