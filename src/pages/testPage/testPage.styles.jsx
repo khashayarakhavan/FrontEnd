@@ -1,26 +1,21 @@
 //Libraries
-
-import styled, { css } from "styled-components";
+import styled from 'styled-components';
 import colors from '../../design/colors';
 import shadows from '../../design/shadows.styles';
 
 //Design
 import {respond} from '../../design/responsive';
 
-const openStyles = css`
-  transform: translateX(100px) scale(0.95);
-  border-radius: 10vw;
-`;
 
+export const TestSection = styled.section`
+  width: 100vw;
+  height: 100vh;
+  background-color: lightblue;
+  position: relative;
+`;
 //Code
 export const VegeloperContainer = styled.div`
-  width: 100%;
-  ${'' /* padding: 2rem 1.5rem; */}
-  ${'' /* border-radius: 40px; */}
-  background: #210f40;
-  transform: translateX(0) scale(1);
-  transition: all 0.45s ;
-  ${(p) => p.open && openStyles};
+ 
   position: relative;
   display: grid;
   background-size: cover;

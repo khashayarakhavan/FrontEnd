@@ -19,6 +19,7 @@ import { checkUserSession } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import GlobalStyle from './design/global.styles';
 import GlobalConstants from './design/constants.styles';
+import TestPage from './pages/testPage/modernNav';
 
 import {
   invertTheme, noChange,
@@ -74,6 +75,7 @@ const App = ({ checkUserSession, currentUser, darkMode }) => {
                   <Route exact path="/hello" component={HomePage} />
                   <Route exact path="/landing" component={LandingPage} />
                   <Route exact path="/vegeloper" component={Vegeloper} />
+                  <Route exact path="/test" component={TestPage} />
                   <Route path="/shop" component={ShopPage} />
                   <Route path="/jquery" component={SetTimeOut} />
                   <Route exact path="/checkout" component={CheckoutPage} />

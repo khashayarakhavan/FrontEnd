@@ -34,12 +34,18 @@ export default {
   accent: {
     lightest: "#EB5E28",
     darkest: "#D65522",
+    new1: "#fd6a0f",
+    new2: "#fde10f",
+    new3: "#2F4858",
+    ochreFire: "#FDA50F",
+    ochrePale: "#EB9928",
+    ochreOxide: "#C67F39",
   },
 
   white: "rgb(248, 248, 249)",
   black: "#102539",
   primary: "#003153",
-  
+
   black: "black",
   palePink: "#fde2e4",
   paleYellow: "#fff1e6",
@@ -95,6 +101,11 @@ export const ThemeNeumorphic = {
   accent: {
     lightest: "#eb5e28",
     darkest: "#d65522",
+    new1: "#fd6a0f",
+    new2: "#fde10f",
+    new3: "#2F4858",
+    ochreFire: "#FDA50F",
+    ochrePale: "#EB9928",
   },
 };
 
